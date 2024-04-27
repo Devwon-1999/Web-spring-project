@@ -13,9 +13,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import static org.junit.Assert.*;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@Transactional
+@RunWith(SpringRunner.class) //Junit 실행시 Spring과 실행하고 싶다면 넣는 코드
+@SpringBootTest // 스프링 부트를 띄운 상태에서 실행할라면 필요한 어노테이션 이 어노테이션이 없다면 @Autowired들도 모두 실패
+@Transactional // 테스트 중 데이터베이스에 데이터가 입력되었던 것을 Rollback한다. ㄷ
 public class MemberServiceTest {
 
     @Autowired MemberService memberService;
