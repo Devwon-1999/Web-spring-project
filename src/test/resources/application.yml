@@ -1,0 +1,22 @@
+spring:
+#  datasource:
+#    url: jdbc:h2:mem:test #테스트 코드를 운영 DB가 아닌 메모리 DB로 실행시키기 위해 변경
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: create
+#    properties:
+#      hibernate:
+#        show_sql: true
+#        format_sql: true
+# 근데 Spring boot에서 기본적으로 위의 설정들이 없어도 메모리모드로 테스트를 돌리기 때문에 없어도된다.
+# Spring boot에서 위의 설정인 ddl-auto: create은 기본적으로  ddl-auto: create-drop로 돌아간다.
+# create는 내가 가지고 있는 엔티티를 가지고 모두 create를 한 뒤 애플리케이션을 실행시킨다.
+# create-drop는 시작은 동일하지만 마지막에 애플리케이션 종료 시점에 drop쿼리를 다 날려주어서 완전히 깨끗하게 초기화 시킨다.
+logging:
+    level:
+        org.hibernate.SQL: debug
+        org.hibernate.orm.jdbc.bind: trace
