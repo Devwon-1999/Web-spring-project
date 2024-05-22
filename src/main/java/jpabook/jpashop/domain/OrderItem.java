@@ -29,4 +29,7 @@ public class OrderItem {
     public void cancel(){
         getItem().addStock(count); //주문 수량만큼 재고수량을 원상 복구해준다.
     }
+    public int getTotalPrice(){
+        return getOrderPrice() * getCount(); //총 가격은 주문 가격 * 개수 이다.
+    }
 }
