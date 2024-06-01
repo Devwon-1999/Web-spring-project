@@ -44,6 +44,17 @@ public class OrderService {
     }
 
     //취소
+    @Transactional
+    public void cancelOrder(Long orderId) {
+        //주문 엔티티 조회
+        Order order = orderRepository.findOne(orderId);
+        //주문 취소
+        order.cancel();
+
+        //Order.java에 cancel이 구현되어 있기때문에 이렇게 간단하게 작성이 가능하다.
+    }
+
+
 
     //검색
 }
