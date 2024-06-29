@@ -22,4 +22,5 @@ public class Member {
     @OneToMany(mappedBy = "member") // 1 : 다 연관관계 어노테이션 mappedBy는 연관관계의 주인이 아님을 명시
     //Order 클래스의 member 필드에 의해 매핑된다는 의미
     private List<Order> orders = new ArrayList<>();
+    //Entity는 최대한 연관성이 없게 끔 개발해야 유지보수에 좋다.
 }
