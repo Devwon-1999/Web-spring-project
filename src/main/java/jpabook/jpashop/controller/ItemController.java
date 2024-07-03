@@ -62,7 +62,7 @@ public class ItemController {
         return "items/updateItemFrom";
     }
 
-    @PostMapping("items/{itemId}/edit")
+    @PostMapping("items/{itemId}/edit") //병합 방식의 데이터 변경
     public String updateItem(@PathVariable String itemId, @ModelAttribute("form") BookForm form) {
         Book book = new Book();
 

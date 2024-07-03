@@ -13,9 +13,9 @@ public class ItemRepository {
     private final EntityManager em;
     public void save(Item item){
         if (item.getId() == null){
-            em.persist(item); // persist를 통해 영속성 컨텍스트에 저장 후 DB에 젖장
+            em.persist(item); // persist를 통해 영속성 컨텍스트에 저장 후 DB에 저장
         } else{
-            em.merge(item); // Update와 유사하다.
+            em.merge(item); // Update와 유사하다. 병합 방식의 데이터 변경
         }
     }
 
