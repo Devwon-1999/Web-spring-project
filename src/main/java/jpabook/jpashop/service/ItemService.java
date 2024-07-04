@@ -21,12 +21,11 @@ public class ItemService {
     }
 
     @Transactional //변경 감지 방식의 데이터 변경
-    public Item updateItem(Long itemId, Book param){
+    public void updateItem(Long itemId, String name, int price, int stockQuantity){
         Item findItem = itemRepository.findOne(itemId); // 영속상태
-        findItem.setPrice(param.getPrice());
-        findItem.setName(param.getName());
-        findItem.setStockQuantity(param.getStockQuantity());//값 세팅 후 트렌젝션 커밋
-        return findItem;
+        findItem.setName(name);
+        findItem.setPrice(price);
+        findItem.setStockQuantity(stockQuantity);//값 세팅 후 트렌젝션 커밋
     }
 
     public List<Item> findItems(){
